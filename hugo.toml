@@ -1,4 +1,4 @@
-baseURL = 'https://jmaushake.github.io/no_name_so_far/'
+baseURL = ''
 locale = 'en-us'
 title = 'No Title So Far'
 theme = ["Custom_PaperMod", "PaperMod"]

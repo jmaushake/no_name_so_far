@@ -1,0 +1,47 @@
+
+# Optional: lokale Umgebungen
+.env
+
+# =========================
+# Hugo generated output
+# =========================
+public/
+resources/
+.hugo_build.lock
+
+# =========================
+# Obsidian
+# =========================
+.obsidian/
+.trash/
+workspace.json
+.vault-stats
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Logs / temp
+# =========================
+*.log
+*.tmp
+
+# =========================
+# IDEs
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# Hugo cache (optional)
+# =========================
+.hugo_cache/
+
+# =========================
+# Node / optional tooling (falls später genutzt)
+# =========================
+node_modules/
+package-lock.json

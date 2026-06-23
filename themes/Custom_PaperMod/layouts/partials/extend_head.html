@@ -1,0 +1,64 @@
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+
+<script>
+
+function fixMermaidEdgeLabels() {
+  document
+    .querySelectorAll('svg[id^="mermaid"] g.edgeLabel foreignObject div span')
+    .forEach(span => {
+      span.style.setProperty("background", "transparent", "important");
+      span.style.setProperty("background-color", "transparent", "important");
+      span.style.setProperty("box-shadow", "none", "important");
+    });
+}
+
+async function renderMermaid() {
+
+  mermaid.initialize({
+    startOnLoad: false
+  });
+
+  // 1. code blocks finden
+  document.querySelectorAll("pre code.language-mermaid").forEach((el) => {
+
+    const pre = el.parentElement;
+
+    const div = document.createElement("div");
+    div.className = "mermaid";
+
+    // wichtig: innerText NICHT innerHTML
+    div.textContent = el.textContent;
+
+    pre.replaceWith(div);
+  });
+
+  // 2. rendern
+  await mermaid.run({
+    nodes: document.querySelectorAll(".mermaid")
+  });
+  // fixMermaidEdgeLabels();
+}
+
+// initial load
+document.addEventListener("DOMContentLoaded", renderMermaid);
+
+// PaperMod / PJAX safety
+document.addEventListener("pjax:end", renderMermaid);
+document.addEventListener("turbo:load", renderMermaid);
+</script>
+
+{{ if .Params.math }}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+onload="renderMathInElement(document.body, {
+  delimiters: [
+    {left: '$$', right: '$$', display: true},
+    {left: '$', right: '$', display: false}
+  ]
+});"></script>
+{{ end }}
+<style>
+/* * { outline: 3px solid red; } */
+</style>

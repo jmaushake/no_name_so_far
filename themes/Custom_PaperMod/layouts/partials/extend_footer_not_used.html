@@ -1,0 +1,9 @@
+{{ with .Site.Taxonomies.tags }}
+  <div class="footer-tags">
+    {{ range . }}
+      <a href="{{ .Page.RelPermalink }}">
+        #{{ .Page.Title }}
+      </a>
+    {{ end }}
+  </div>
+{{ end }}

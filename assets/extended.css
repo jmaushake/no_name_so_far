@@ -1,0 +1,37 @@
+.copy-code-btn {
+    background: rgba(255, 255, 255, 0.08);
+    color: #eaeaea;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    padding: 3px 6px;
+    font-size: 12px;
+    cursor: pointer;
+    opacity: 0.85;
+    transition: 0.2s ease;
+}
+
+.copy-code-btn:hover {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.footer-tags {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.footer-tags a {
+  font-size: 2.5rem;
+  text-decoration: none;
+  opacity: 0.75;
+}
+
+.footer-tags a:hover {
+  opacity: 1;
+}
+
+body {
+  outline: 3px solid red;
+}

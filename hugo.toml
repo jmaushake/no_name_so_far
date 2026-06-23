@@ -1,0 +1,44 @@
+baseURL = '/'
+locale = 'en-us'
+title = 'No Title So Far'
+theme = ["Custom_PaperMod", "PaperMod"]
+
+[minify]
+  disableJS = false
+
+[taxonomies]
+  tag = "tags"
+  
+[params]
+ShowPostMeta = true
+ShowLastMod = true
+math = true
+ShowCodeCopyButtons = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+    [markup.goldmark.extensions.passthrough]
+      enable = true
+
+      [markup.goldmark.extensions.passthrough.delimiters]
+        block = [['$$', '$$']]
+        inline = [['$', '$']]
+      
+[menu]
+
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+
+  # [[menu.main]]
+  #   name = "Posts"
+  #   url = "/posts/"
+  #   weight = 2
+
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 3

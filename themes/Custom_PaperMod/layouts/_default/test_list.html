@@ -1,0 +1,19 @@
+{{ define "main" }}
+
+{{ $first := index .Pages 0 }}
+
+<article>
+  <h1>{{ $first.Title }}</h1>
+  {{ $first.Content }}
+</article>
+
+<hr>
+
+{{ range after 1 .Pages }}
+  <article>
+    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    <p>{{ .Summary }}</p>
+  </article>
+{{ end }}
+
+{{ end }}

@@ -15,6 +15,7 @@ ShowLastMod = true
 math = true
 ShowCodeCopyButtons = true
 
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
